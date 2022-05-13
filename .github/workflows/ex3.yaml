@@ -9,7 +9,7 @@ jobs:
       issues: write 
     steps:
       - name: Generate Sha-Short
-        run: echo '::set-output name=SHASHORT::${GITHUB_SHA::7}'
+        run: echo "::set-output name=SHASHORT::${GITHUB_SHA::7}"
         id: shashort-generator
       
       - name: Create new issue
