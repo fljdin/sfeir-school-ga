@@ -6,7 +6,7 @@ jobs:
   run-npm-test:
     runs-on: ubuntu-latest
     env:
-      NODE_VERSION: 12
+      NODE_VERSION: 14
     steps:
         - name: checkout
           uses: actions/checkout@v2
@@ -20,4 +20,4 @@ jobs:
             npm install
             npm test
         - name: check node version
-          run: npm -v
+          run: node -v
