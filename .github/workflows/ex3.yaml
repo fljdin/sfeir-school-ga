@@ -5,9 +5,11 @@ on:
 jobs:
   run-npm-test:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write 
     steps:
       - name: Generate Sha-Short
-        run: echo '::set-output name=SHASHORT::${{ GITHUB_SHA::7 }}'
+        run: echo '::set-output name=SHASHORT::${GITHUB_SHA::7}'
         id: shashort-generator
       
       - name: Create new issue
@@ -20,4 +22,4 @@ jobs:
           --data '{
             "title": "Automated issue for commit: ${{ steps.shashort-generator.outputs.SHASHORT }}",
             "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ github.sha }}_."
-            }' 
+          }' 
