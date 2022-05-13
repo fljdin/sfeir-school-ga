@@ -1,4 +1,3 @@
-name: Reusable npm-test Workflow
 
 on:
   workflow_call:
