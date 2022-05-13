@@ -4,11 +4,11 @@ on:
   workflow_call:
     inputs:
       node_version:
-        required: true
+        required: false
         type: string
         default: 'lts/*'
  
- jobs:
+jobs:
   run-npm-test:
     runs-on: ubuntu-latest
     steps:
