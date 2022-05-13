@@ -1,4 +1,4 @@
-name: npm test
+name: ex6 npm test
 on: 
   workflow_dispatch:
 
